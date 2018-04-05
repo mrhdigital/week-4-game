@@ -35,7 +35,10 @@ var crystal = {
 var getRandom = function(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }    
-
+// Starts the Game and restart the game
+var startGame = function() {
+    // Reset the Current Score
+    currentScore = 0;
 
   // Set a new Target Score (between 19 and 120)
   targetScore = getRandom(19, 120);
@@ -47,11 +50,26 @@ var getRandom = function(min, max) {
   crystal.yellow.value    = getRandom(1, 12);  
 
 
+  // Change the HTML to reflect all of these changes
+  $("#yourScore").html(currentScore);
+  $("#targetScore").html(targetScore);
+
+
   // Testing Console
   console.log("---------------------------------------");
   console.log("Target Score:" + targetScore);
   console.log("Blue: " + crystal.blue.value + " | Green: " +crystal.green.value + " |Red: " + crystal.red.value+ " | Yellow: " + crystal.yellow.value);
   console.log("---------------------------------------");
+}
+
+  // Respond to click on the crytals
+var addValues = function(crystal) {
+    // Change currentScore
+    currentScore = currentScore + crystal.value;
+
+    // Change the HTML to reflect changes in currentScore
+    $("#yourScore").html(currentScore);
+}    
 
 
 
@@ -59,3 +77,11 @@ var getRandom = function(min, max) {
 
 // MAIN PROCESSES
 //*****************************************************************************************/
+
+// Starts the game the First Time.
+startGame();
+
+$("#blue").click(function() {
+    
+    addValues(crystal.blue);
+});
