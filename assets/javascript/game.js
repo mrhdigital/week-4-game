@@ -102,6 +102,9 @@ var checkWin = function() {
 
         // Change Loss Count HTML
         $("#lossCount").html(lossCount);
+
+        //Restart game
+        startGame();
         
         
     }
@@ -115,6 +118,9 @@ var checkWin = function() {
 
         // Change Win Count HTML
         $("#winCount").html(winCount);
+
+        //Restart game
+        startGame();
 
         
     }
