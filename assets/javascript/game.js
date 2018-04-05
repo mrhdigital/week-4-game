@@ -23,7 +23,13 @@ var crystal = {
     },
 };
 
+//Scores (Current and Target)
+var currentScore    = 0;
+var targetScore      = 0;
 
+// Wins and losses
+var winCount   = 0;
+var lossCount  = 0;
 
 
 
@@ -71,6 +77,13 @@ var addValues = function(crystal) {
     $("#yourScore").html(currentScore);
 }    
 
+  if (currentScore == targetScore ) {
+        alert(" You won!");
+    }
+    else if(currentScore > targetScore) {
+        alert("you lost!");
+    }
+
 
 
 
@@ -84,4 +97,15 @@ startGame();
 $("#blue").click(function() {
     
     addValues(crystal.blue);
+});
+$("#green").click(function() {
+    addValues(crystal.green);
+});
+
+$("#red").click(function() {
+    addValues(crystal.red);
+});
+
+$("#yellow").click(function() {
+    addValues(crystal.yellow);
 });
