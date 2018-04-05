@@ -75,15 +75,37 @@ var addValues = function(crystal) {
 
     // Change the HTML to reflect changes in currentScore
     $("#yourScore").html(currentScore);
+    // Call the checkWin Function
+    checkWin();
 }    
 
-  if (currentScore == targetScore ) {
-        alert(" You won!");
-    }
-    else if(currentScore > targetScore) {
-        alert("you lost!");
-    }
+//   if (currentScore == targetScore ) {
+//         alert(" You won!");
+//     }
+//     else if(currentScore > targetScore) {
+//         alert("you lost!");
+//     }
 
+// Testing Console
+console.log("Your Score: " + currentScore);
+
+// Check if User Won or Lost and Reset the Game
+var checkWin = function() {
+
+    // Check if currentScore is larger than targerScore
+    if(currentScore > targetScore) {
+        alert("Sorry, You Lost!");
+        //console.log("YOU Lost");
+
+        // Add to loss Counter
+        lossCount++;
+
+        // Change Loss Count HTML
+        $("#lossCount").html(lossCount);
+        
+        
+    }
+}       
 
 
 
