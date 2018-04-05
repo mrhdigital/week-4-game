@@ -105,6 +105,19 @@ var checkWin = function() {
         
         
     }
+
+    else if (currentScore == targetScore) {
+        alert("Congratulations! You Won!");
+        //console.log("You Won!");
+
+        // Add to the Win Counter
+        winCount++;
+
+        // Change Win Count HTML
+        $("#winCount").html(winCount);
+
+        
+    }
 }       
 
 
