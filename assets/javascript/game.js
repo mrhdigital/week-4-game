@@ -1,27 +1,49 @@
 // GLOBAL VARIABLES
 //*****************************************************************************************/
-var crystal = {
-    blue:
+// var crystal = {
+//     blue:
+//     {
+//         name: "Blue",
+//         value: 0
+//     },
+//     green:
+//     {
+//         name: "Green",
+//         value: 0
+//     },
+//     red:
+//     {
+//         name: "Red",
+//         value: 0
+//     },
+//     yellow:
+//     {
+//         name:"Yellow",
+//         value: 0
+//     },
+// };
+var crystal = [
+    
     {
         name: "Blue",
         value: 0
     },
-    green:
+    
     {
         name: "Green",
         value: 0
     },
-    red:
+    
     {
         name: "Red",
         value: 0
     },
-    yellow:
+    
     {
         name:"Yellow",
         value: 0
-    },
-};
+    }
+];
 
 //Scores (Current and Target)
 var currentScore    = 0;
@@ -50,10 +72,14 @@ var startGame = function() {
   targetScore = getRandom(19, 120);
 
   // Set different values for each of the crystals (between 1 and 12)
-  crystal.blue.value      = getRandom(1, 12);
-  crystal.red.value       = getRandom(1, 12);
-  crystal.green.value     = getRandom(1, 12);
-  crystal.yellow.value    = getRandom(1, 12);  
+//   crystal[0].value      = getRandom(1, 12);
+//   crystal[1].value       = getRandom(1, 12);
+//   crystal[2].value     = getRandom(1, 12);
+//   crystal[3].value    = getRandom(1, 12);  
+
+  for(var i = 0; i < crystal.length; i++) {
+      crystal[i].value = getRandom(1,12);
+  }
 
 
   // Change the HTML to reflect all of these changes
@@ -64,7 +90,7 @@ var startGame = function() {
   // Testing Console
   console.log("---------------------------------------");
   console.log("Target Score:" + targetScore);
-  console.log("Blue: " + crystal.blue.value + " | Green: " +crystal.green.value + " |Red: " + crystal.red.value+ " | Yellow: " + crystal.yellow.value);
+  console.log("Blue: " + crystal[0].value + " | Green: " +crystal[1].value + " |Red: " + crystal[2].value+ " | Yellow: " + crystal[3].value);
   console.log("---------------------------------------");
 }
 
@@ -137,16 +163,16 @@ startGame();
 
 $("#blue").click(function() {
     
-    addValues(crystal.blue);
+    addValues(crystal[0]);
 });
 $("#green").click(function() {
-    addValues(crystal.green);
+    addValues(crystal[1]);
 });
 
 $("#red").click(function() {
-    addValues(crystal.red);
+    addValues(crystal[2]);
 });
 
 $("#yellow").click(function() {
-    addValues(crystal.yellow);
+    addValues(crystal[3]);
 });
