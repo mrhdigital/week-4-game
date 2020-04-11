@@ -22,6 +22,8 @@
 //         value: 0
 //     },
 // };
+
+// Created the array of object "crystal"
 var crystal = [
     
     {
@@ -75,8 +77,9 @@ var startGame = function() {
 //   crystal[0].value      = getRandom(1, 12);
 //   crystal[1].value       = getRandom(1, 12);
 //   crystal[2].value     = getRandom(1, 12);
-//   crystal[3].value    = getRandom(1, 12);  
+//   crystal[3].value    = getRandom(1, 12); 
 
+// created for loop to assign the random values to each object(colored crytal) in the array
   for(var i = 0; i < crystal.length; i++) {
       crystal[i].value = getRandom(1,12);
   }
